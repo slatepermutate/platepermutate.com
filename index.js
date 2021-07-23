@@ -19,5 +19,5 @@ function ready(f) {
   if (document.readyState === 'complete') {
     Promise.resolve().then(f);
   }
-  document.addEventListener('readystatechange', true, f);
+  document.addEventListener('readystatechange', f);
 }
