@@ -20,6 +20,7 @@ ready(() => {
 function ready(f) {
   if (document.readyState === 'complete') {
     Promise.resolve().then(f);
+  } else {
+    document.addEventListener('readystatechange', f);
   }
-  document.addEventListener('readystatechange', f);
 }
