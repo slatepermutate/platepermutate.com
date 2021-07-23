@@ -9,8 +9,10 @@ ready(() => {
   ];
   let imageIndex = Date.now() % images.length;
   document.body.style.backgroundSize = 'cover';
+  document.body.style.backgroundPosition = 'center center';
   (function setBackground () {
-    document.body.style.backgroundImage = `url('${images[imageIndex = (imageIndex + 1) % images.length]}')`;
+    var originalImage = images[imageIndex];
+    document.body.style.backgroundImage = `url('${images[imageIndex = (imageIndex + 1) % images.length]}'), url('${originalImage}')`;
     setTimeout(setBackground, 30000);
   })();
 });
